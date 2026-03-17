@@ -5,11 +5,11 @@ function Contact() {
         <h2>Contact</h2>
         <p>Feel free to connect for collaborations or opportunities.</p>
         <div className="contact-links">
-          <a href="mailto:youremail@example.com">youremail@example.com</a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noreferrer">
+          <a href="mailto:balatkm2007@gmail.com">balatkm2007@gmail.com</a>
+          <a href="https://linkedin.com/in/BALA" target="_blank" rel="noreferrer">
             LinkedIn
           </a>
-          <a href="https://github.com/yourusername" target="_blank" rel="noreferrer">
+          <a href="https://github.com/Bala-techdev" target="_blank" rel="noreferrer">
             GitHub
           </a>
         </div>

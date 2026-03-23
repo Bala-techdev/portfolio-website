@@ -14,8 +14,8 @@ function Hero() {
             <a className="btn btn-primary" href="https://github.com/Bala-techdev" target="_blank" rel="noreferrer">
               GitHub
             </a>
-            <a className="btn btn-secondary" href="/resume.pdf" target="_blank" rel="noreferrer">
-              Resume
+            <a className="btn btn-resume" href="/resume.pdf" download="Bala-Resume.pdf" aria-label="Download resume PDF">
+              Download Resume
             </a>
           </div>
         </div>

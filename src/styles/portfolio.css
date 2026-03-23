@@ -240,21 +240,48 @@ body {
 .projects-grid {
   margin-top: 20px;
   display: grid;
-  gap: 20px;
+  gap: 24px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .project-card {
-  padding: 24px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  gap: 16px;
+  transition: transform 0.32s ease, box-shadow 0.32s ease, border-color 0.32s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 34px rgba(2, 8, 24, 0.62);
+  transform: translateY(-8px) scale(1.01);
+  border-color: rgba(66, 210, 197, 0.45);
+  box-shadow: 0 24px 36px rgba(2, 8, 24, 0.64);
+}
+
+.project-media {
+  aspect-ratio: 16 / 9;
+  border-bottom: 1px solid var(--line);
+  background: rgba(12, 18, 30, 0.7);
+}
+
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.38s ease;
+}
+
+.project-card:hover .project-media img {
+  transform: scale(1.06);
+}
+
+.project-card h3,
+.project-card p,
+.project-features,
+.project-stack,
+.project-actions {
+  padding: 0 20px;
 }
 
 .project-stack {
@@ -272,7 +299,31 @@ body {
   font-size: 0.84rem;
 }
 
-.project-card a,
+.project-features {
+  margin: 0;
+  padding-left: 38px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.project-features li + li {
+  margin-top: 6px;
+}
+
+.project-actions {
+  margin-top: auto;
+  padding-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-actions .btn {
+  padding: 9px 14px;
+  font-size: 0.9rem;
+}
+
+.project-card a:not(.btn),
 .contact-links a {
   color: var(--primary);
   text-decoration: none;
@@ -280,7 +331,7 @@ body {
   transition: color 0.25s ease;
 }
 
-.project-card a:hover,
+.project-card a:not(.btn):hover,
 .contact-links a:hover {
   color: #86f0e7;
 }
@@ -343,6 +394,22 @@ body {
   .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .project-card {
+    gap: 14px;
+  }
+
+  .project-card h3,
+  .project-card p,
+  .project-features,
+  .project-stack,
+  .project-actions {
+    padding: 0 16px;
+  }
+
+  .project-actions {
+    padding-bottom: 16px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -363,6 +430,18 @@ body {
   .skills-grid,
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-features {
+    padding-left: 34px;
+  }
+
+  .project-actions {
+    gap: 8px;
+  }
+
+  .project-actions .btn {
+    width: 100%;
   }
 
   .hero-panel,

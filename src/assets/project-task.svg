@@ -1,0 +1,30 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1200" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1D1C44"/>
+      <stop offset="1" stop-color="#0D2E5A"/>
+    </linearGradient>
+    <linearGradient id="kanban" x1="90" y1="140" x2="1110" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#66E1D6"/>
+      <stop offset="1" stop-color="#7AA7FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" rx="32" fill="url(#bg2)"/>
+  <rect x="74" y="94" width="1052" height="532" rx="24" fill="#12173A" stroke="#36467D" stroke-width="2"/>
+  <rect x="112" y="146" width="304" height="438" rx="16" fill="#18204A"/>
+  <rect x="448" y="146" width="304" height="438" rx="16" fill="#18204A"/>
+  <rect x="784" y="146" width="304" height="438" rx="16" fill="#18204A"/>
+  <rect x="140" y="182" width="248" height="20" rx="7" fill="#43579A"/>
+  <rect x="476" y="182" width="248" height="20" rx="7" fill="#43579A"/>
+  <rect x="812" y="182" width="248" height="20" rx="7" fill="#43579A"/>
+  <rect x="140" y="226" width="248" height="78" rx="12" fill="#223064"/>
+  <rect x="140" y="320" width="248" height="78" rx="12" fill="#223064"/>
+  <rect x="140" y="414" width="248" height="78" rx="12" fill="#223064"/>
+  <rect x="476" y="226" width="248" height="78" rx="12" fill="#223064"/>
+  <rect x="476" y="320" width="248" height="78" rx="12" fill="url(#kanban)" fill-opacity="0.75"/>
+  <rect x="476" y="414" width="248" height="78" rx="12" fill="#223064"/>
+  <rect x="812" y="226" width="248" height="78" rx="12" fill="#223064"/>
+  <rect x="812" y="320" width="248" height="78" rx="12" fill="#223064"/>
+  <rect x="812" y="414" width="248" height="78" rx="12" fill="#223064"/>
+  <circle cx="608" cy="358" r="14" fill="#D9F8F5"/>
+</svg>

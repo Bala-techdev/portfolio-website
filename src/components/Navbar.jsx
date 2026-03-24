@@ -11,6 +11,7 @@ const navLinks = [
 
 function Navbar({ theme, onToggleTheme }) {
   const [activeSection, setActiveSection] = useState('home')
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const updateActiveSection = () => {
@@ -37,6 +38,19 @@ function Navbar({ theme, onToggleTheme }) {
     }
   }, [])
 
+  useEffect(() => {
+    const closeOnDesktop = () => {
+      if (window.innerWidth > 768) {
+        setMenuOpen(false)
+      }
+    }
+
+    window.addEventListener('resize', closeOnDesktop)
+    return () => {
+      window.removeEventListener('resize', closeOnDesktop)
+    }
+  }, [])
+
   const handleNavClick = (event, targetId) => {
     event.preventDefault()
     const section = document.getElementById(targetId)
@@ -46,6 +60,7 @@ function Navbar({ theme, onToggleTheme }) {
 
     section.scrollIntoView({ behavior: 'smooth', block: 'start' })
     setActiveSection(targetId)
+    setMenuOpen(false)
     window.history.replaceState(null, '', `#${targetId}`)
   }
 
@@ -55,8 +70,21 @@ function Navbar({ theme, onToggleTheme }) {
         <a href="#home" className="brand" onClick={(event) => handleNavClick(event, 'home')}>
           Portfolio
         </a>
-        <div className="nav-actions">
-          <nav aria-label="Main navigation">
+        <div className="nav-controls">
+          <button
+            type="button"
+            className={`nav-menu-button ${menuOpen ? 'is-open' : ''}`}
+            onClick={() => setMenuOpen((prev) => !prev)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={menuOpen}
+            aria-controls="main-navigation"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+          <div className={`nav-actions ${menuOpen ? 'nav-actions-open' : ''}`}>
+          <nav id="main-navigation" aria-label="Main navigation">
             <ul className="nav-list">
               {navLinks.map((link) => (
                 <li key={link.id}>
@@ -92,6 +120,7 @@ function Navbar({ theme, onToggleTheme }) {
             </span>
             <span>{theme === 'dark' ? 'Light' : 'Dark'}</span>
           </button>
+          </div>
         </div>
       </div>
     </header>
